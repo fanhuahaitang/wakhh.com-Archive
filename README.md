@@ -4,4 +4,4 @@
 
 ## docs
 
-- 文档[./doc/index.md](./doc/index.md)
+- 文档[./docs/index.md](./docs/index.md)
