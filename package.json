@@ -1,0 +1,43 @@
+{
+  "name": "wakhh.com",
+  "version": "0.0.1",
+  "description": "https://wakhh.com backend server",
+  "main": "dist/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "gulp": "gulp",
+    "gulp-watch": "gulp watch",
+    "prestart": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wakhh/wakhh.com.git"
+  },
+  "author": "wak",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/wakhh/wakhh.com/issues"
+  },
+  "homepage": "https://github.com/wakhh/wakhh.com#readme",
+  "dependencies": {
+    "koa": "^2.8.1",
+    "koa-router": "^7.4.0",
+    "koa-sslify": "^4.0.3",
+    "koa-static": "^5.0.0",
+    "moment": "^2.24.0",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.6",
+    "@types/koa": "^2.0.49",
+    "@types/koa-router": "^7.0.42",
+    "@types/koa-sslify": "^4.0.1",
+    "@types/koa-static": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^5.0.1",
+    "typescript": "^3.6.3"
+  }
+}

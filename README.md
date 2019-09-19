@@ -1,2 +1,7 @@
 # wakhh.com
-https://wakhh.com backend server
+
+[wakhh.com](https://wakhh.com) backend server
+
+## docs
+
+- 文档[./doc/index.md](./doc/index.md)
