@@ -5,7 +5,7 @@ import koa from 'koa';
 import enforceHttps from 'koa-sslify';
 import koaRouter from 'koa-router';
 import api from './api';
-import logger from './lib/logger';
+import logger from './logger';
 import koaStatic from 'koa-static';
 import fs from 'fs';
 import path from 'path';
@@ -21,7 +21,7 @@ app.use(async (ctx, next) => {
   // 日志中间件
   // ctx.state = {};
   await next();
-  logger.info(`Req:[${ctx.request.ip},${ctx.request.method},${ctx.request.originalUrl}];Res:${ctx.response.status};Record:${JSON.stringify(ctx.state)}`)
+  logger.info(`Req:[${ctx.ip},${ctx.method},${ctx.originalUrl}];Res:${ctx.status};Record:${JSON.stringify(ctx.state)}`)
 });
 
 app.use(async (ctx, next) => {
@@ -39,13 +39,18 @@ app.use(async (ctx, next) => {
     await next();
   } catch (err) {
     ctx.status = err.statusCode || err.status || 500;
-    ctx.state.error = err;
+    ctx.state.error = {
+      msg: err.message,
+      stack: err.stack
+    };
   }
 })
 
 // API请求处理，使用二级路由'/api'的请求皆属于API请求
-let router = new koaRouter();
-router.use('/api', api.routes(), api.allowedMethods(), (ctx, next) => {
+let router = new koaRouter({
+  prefix: '/api'
+});
+router.use(api.routes(), api.allowedMethods(), (ctx, next) => {
   // API请求处理，最后使用的404中间件，到达此中间件时，因为没有调用next函数，所以将不会再继续路由下去
 })
 app.use(router.routes()).use(router.allowedMethods());
