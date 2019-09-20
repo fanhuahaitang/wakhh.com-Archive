@@ -2,9 +2,10 @@ import koaRouter from 'koa-router';
 
 let router = new koaRouter();
 
-// 404
-router.use((ctx, next) => {
-  ctx.status = 404;
+router.get('/test', (ctx, next) => {
+  ctx.body = {
+    message: 'test'
+  };
 })
 
 export default router;
