@@ -29,7 +29,8 @@
     "koa-static": "^5.0.0",
     "moment": "^2.24.0",
     "mongodb": "^3.3.2",
-    "mongoose": "^5.7.1",
+    "request-promise-native": "^1.0.7",
+    "require-from-string": "^2.0.2",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.1.0"
   },
@@ -40,7 +41,8 @@
     "@types/koa-sslify": "^4.0.1",
     "@types/koa-static": "^4.0.1",
     "@types/mongodb": "^3.3.2",
-    "@types/mongoose": "^5.5.17",
+    "@types/request-promise-native": "^1.0.17",
+    "@types/require-from-string": "^1.2.0",
     "gulp": "^4.0.2",
     "gulp-typescript": "^5.0.1",
     "typescript": "^3.6.3"
